@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <ctype.h>
+#define PI 3.14159265358979323846;
 
 double op1, op2, resul;
 char simbolo;
@@ -29,39 +31,62 @@ int main(void){
     switch (simbolo) {
         case '+':
             printf("Ingrese el primer operando: \n");
-            scanf("%lf", &op1);
+            if (scanf("%lf", &op1) != 1) {
+                printf("No te pases de vivo, eso no es un numero valido\n");
+                    return 0;
+                }
             printf("Ingrese el segundo operando: \n");
-            scanf("%lf", &op2);
+            if (scanf("%lf", &op2) != 1) {
+                printf("No te pases de vivo, eso no es un numero valido\n");
+                    return 0;
+                }
             resul = op1+op2;
-            printf("Resultado: %lf\n", resul);
+            printf("Resultado: %.2f\n", resul);
             break;
-
         case '-':
-            printf("Ingrese el primer operando: \n");
-            scanf("%lf", &op1);
+             printf("Ingrese el primer operando: \n");
+            if (scanf("%lf", &op1) != 1) {
+                printf("No te pases de vivo, eso no es un numero valido\n");
+                    return 0;
+                }
             printf("Ingrese el segundo operando: \n");
-            scanf("%lf", &op2);
+            if (scanf("%lf", &op2) != 1) {
+                printf("No te pases de vivo, eso no es un numero valido\n");
+                    return 0;
+                }
             resul = op1-op2;
-            printf("Resultado: %lf\n", resul);
+            printf("Resultado: %.2f\n", resul);
             break;
 
         case '*':
-            printf("Ingrese el primer operando: \n");
-            scanf("%lf", &op1);
+             printf("Ingrese el primer operando: \n");
+            if (scanf("%lf", &op1) != 1) {
+                printf("No te pases de vivo, eso no es un numero valido\n");
+                    return 0;
+                }
             printf("Ingrese el segundo operando: \n");
-            scanf("%lf", &op2);
+            if (scanf("%lf", &op2) != 1) {
+                printf("No te pases de vivo, eso no es un numero valido\n");
+                    return 0;
+                }
             resul = op1*op2;
-            printf("Resultado: %lf\n", resul);
+            printf("Resultado: %.2f\n", resul);
             break;
 
         case '/':
-            printf("Ingrese el primer operando: \n");
-            scanf("%lf", &op1);
+             printf("Ingrese el primer operando: \n");
+            if (scanf("%lf", &op1) != 1) {
+                printf("No te pases de vivo, eso no es un numero valido\n");
+                    return 0;
+                }
             printf("Ingrese el segundo operando: \n");
-            scanf("%lf", &op2);
+            if (scanf("%lf", &op2) != 1) {
+                printf("No te pases de vivo, eso no es un numero valido\n");
+                    return 0;
+                }
             if (op2 != 0) {
                 resul = op1/op2;
-                printf("Resultado: %lf\n", resul);
+                printf("Resultado: %.2f\n", resul);
             } else {
                 printf("Operacion NO Valida Division por Cero\n");
             }
@@ -69,13 +94,19 @@ int main(void){
 
         case '!':
             printf("Ingrese el operando: \n");
-            scanf("%lf", &op1);
+            if (scanf("%lf", &op1) != 1) {
+                printf("No te pases de vivo, eso no es un numero valido\n");
+                    return 0;
+                }
             factorial(op1);
             break;
 
         case 'e':{
             printf("Ingrese el operando: \n");
-            scanf("%lf", &op1);
+            if (scanf("%lf", &op1) != 1) {
+                printf("No te pases de vivo, eso no es un numero valido\n");
+                    return 0;
+                }
             double respaldo = op1;
             double e = euler();
             double potencia = 1.0;
@@ -91,17 +122,17 @@ int main(void){
             break;
     }
 
+
     return 0;
 }
     int factorial(double op1){
-        int i, k;
+        int i;
         int resultado = 1;
-        int resultado2 = 1;
         if (simbolo == '!') {
             for(i = 1; i <= op1; i++){
                 resultado = i*resultado;
             }
-            printf("El factorial de %lf es: %d\n", op1, resultado);
+            printf("El factorial de %.2f es: %d\n", op1, resultado);
         }
         return 0;
     }
